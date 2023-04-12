@@ -1,0 +1,84 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="{{ path('app_home') }}">
+            <img src="assets/images/logo/envracbleulogo.png" height="50" alt="En Vrac Bleu" loading="lazy" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item lead">
+                    <a class="nav-link active" href="{{ path('app_home') }}">Accueil
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item lead">
+                    <a class="nav-link active" href="{{ path('app_home.aboutus') }}">À Propos
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item lead">
+                    <a class="nav-link active" href="{{ path('app_published') }}">Nos Recettes
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item lead">
+                    <a class="nav-link active" href="{{ path('app_contact') }}">Contact
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+
+                {% if app.user %}
+                <li class="nav-item lead">
+                    <a class="nav-link text-dark" href="{{ path('recipe.index') }}">Mes Recettes
+                    </a>
+                </li>
+                <li class="nav-item lead">
+                    <a class="nav-link text-dark" href="{{ path('ingredient.index') }}">Mes Ingredients
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+
+            <div class="d-flex">
+                <div class="navbar-nav me-auto">
+
+                    {% if app.user %}
+                        <li class="nav-item lead dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Bienvenue  {{ app.user.firstname }} {{ app.user.lastname }}
+                                </a>
+                                <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="{{ path('user.update', {id : app.user.id}) }}">Modifier mes informations</a>
+                                        <a class="dropdown-item" href="{{ path('user.update.password',{id : app.user.id}) }}">Changer le mot de passe</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    {% if 'ROLE_ADMIN' in app.user.roles %}
+                                        <a class="dropdown-item" href="{{ path('admin') }}">Administration</a>
+                                        <div class="dropdown-divider"></div>
+                                    {% endif %}
+
+                                    <a class="dropdown-item" href="{{ path('security.logout') }}">Se déconnecter</a>
+                                </div>
+                        </li>
+                </div>
+            </div>
+
+            {% else %}
+                <li class="nav-item lead">
+                    <a class="nav-link text-dark" href="{{ path('security.login') }}">Connexion
+                    </a>
+                </li>
+                <li class="nav-item lead">
+                    <a class="nav-link text-dark" href="{{ path('security.registration') }}">Inscription
+                    </a>
+                </li>
+            {% endif %}
+
+        </div>
+    </div>
+</nav>

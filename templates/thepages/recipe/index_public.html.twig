@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Recettes{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-4 text-center">
+        {% if not recipes.items is same as ([]) %}
+            <h1>Toutes les Recettes de la communauté</h1>
+            <br>
+            <br>
+            <div class="d-flex justify-content-center flex-wrap gap-3 ">
+                {% for recipe in recipes %}
+                <div class="card text-bg-light mb-3 col-3" style="width: 18rem;">
+                    <div class="card-header">{{ recipe.name }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Difficulté {{ recipe.difficulty }} sur 5</h5>
+                        <p class="card-text">{{ recipe.description|slice(0,100)~'...' }}</p>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href="/recette/{{ recipe.id }}" role="button">Voir plus</a>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p> Il n'y a pas de recettes pour le moment </p>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="mt-4 px-4 pt-5 my-5 text-center fw-bold display-4">Contact</h1>
+    <div class="col-6 mx-auto">
+        <p class="lead mb-4 text-center">Horaires d'ouverture: 9h à 18h du lundi au vendredi</p>
+        <p class="mb-4 text-center">E-mail : associationenvracbleu@gmail.com</p>
+        <p class="mb-4 text-center">Adresse : 11 rue sans issue, 75005 Paris </p>
+        <p class="mb-4 text-center">Téléphone : +33 1 02 03 04 05</p>
+
+        <div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-4">
+                <img src="assets/images/logo/imagecontact.png" class="rounded mx-auto d-block" alt="image logo de la association" width="200" height="200" loading="lazy">
+            </div>
+        </div>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success mt-4">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {{ form(form) }}
+        <br>
+        <br>
+    </div>
+</div>
+
+{% endblock %}

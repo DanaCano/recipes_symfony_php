@@ -25,7 +25,7 @@ class UserListener
 
 
     /**
-     * Ici j'ai  encodé le mot de passe à partir du mdp brut
+     * Ici j'ai encodé le mot de passe à partir du mdp brut
      * @param User $user
      * @return void
      */

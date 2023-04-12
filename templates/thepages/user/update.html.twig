@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification de l'utilisateur{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="mt-4 px-4 pt-5 my-5 text-center lead display-4">Formulaire de modification des informations relatives à l'utilisateur</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-center">Vous pouvez modifier votre nom et prénom. </p>
+        <!--<div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-4">
+                <img src="assets/images/logo/imagecontact.png" class="rounded mx-auto d-block" alt="image logo de la association" width="200" height="200" loading="lazy">
+                </div>
+            </div>-->
+
+        {% for message in app.flashes('warning') %}
+            <div class="alert alert-warning mt-4">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {{ form(form) }}
+        <br>
+        <br>
+    </div>
+</div>
+
+{% endblock %}

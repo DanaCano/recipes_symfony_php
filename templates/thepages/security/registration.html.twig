@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="mt-4 px-4 pt-5 my-5 text-center fw-bold display-4">Inscription</h1>
+        <div class="col-6 mx-auto">
+            <p class="lead mb-4 text-center">Bienvenue à notre communauté</p>
+            <p class="lead mb-4 text-center text-dark fw-bold">Vous avez le super pouvoir de réaliser de grands changements en commençant par des choses simples</p>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-4">
+                    <img src="assets/images/logo/imageinscription.png" class="rounded mx-auto d-block" alt="image logo de la association" width="200" height="200" loading="lazy">
+                </div>
+            </div>
+
+            {{ form(form) }}
+
+            <br>
+            <br>
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock %}

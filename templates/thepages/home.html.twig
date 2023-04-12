@@ -1,0 +1,211 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-4 text-center">
+            <h1 class="display-4 fw-bold">Bienvenue à en Vrac Bleu</h1>
+    </div>
+
+    <!-- debut de mon diapo Carousel -->
+    <main>
+        <div class="container mt-4">
+        <!-- Conteneur principal de tout le diaporama -->
+            <div class="diapo">
+            <!-- Conteneur des "diapos" -->
+                <div class="elements">
+                <!-- Première diapo carrousel-->
+                    <div class="element active">
+                        <img src="assets/images/index-slide1.jpg" alt="image de l'activité de l'association">
+                        <div class="caption">
+                            <h2>Recettes</h2>
+                            <strong>Anti-gaspi</strong>
+                        </div>
+                    </div>
+                <!-- Deuxième diapo carrousel-->
+                    <div class="element">
+                        <img src="assets/images/index-slide2.jpg" alt="image de l'activité de l'association">
+                        <div class="caption">
+                            <h2>Créativité</h2>
+                            <strong>Recettes</strong>
+                        </div>
+                    </div>
+                <!-- Troisième diapo carrousel-->
+                    <div class="element">
+                        <img src="assets/images/index-slide3.jpg" alt="image de l'activité de l'association">
+                        <div class="caption">
+                            <h2>Optimisation</h2>
+                            <strong>d'ingrédients</strong>
+                        </div>
+                    </div>
+                <!-- Quatrième diapo carrousel-->
+                    <div class="element">
+                        <img src="assets/images/index-slide4.jpg" alt="image de l'activité de l'association">
+                        <div class="caption">
+                            <h2>Motivation</h2>
+                            <strong>Conseils</strong>
+                        </div>
+                    </div>
+                    <!-- Cinquième diapo carrousel-->
+                    <div class="element">
+                        <img src="assets/images/index-slide5.jpg" alt="image de l'activité de l'association">
+                        <div class="caption">
+                            <h2>Communauté</h2>
+                            <strong>Française</strong>
+                        </div>
+                    </div>
+                </div>
+            <!-- Flèches de navigation -->
+                <i id="nav-gauche" class="las la-chevron-left"></i>
+                <i id="nav-droite" class="las la-chevron-right"></i>
+            </div>
+        </div>
+    </main>
+    <!-- fin de mon diapo Carousel -->
+
+    <!-- debut de section1 VRAC BLEU -->
+    <div class="container mt-4">
+        <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 border-bottom text-center">Vrac Bleu</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <img src="https://img.icons8.com/fluency/48/null/imac.png"/>
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Notre appli en Vrac Bleu</h3>
+                        <p>Utilisez notre application Vrac Bleu dans votre vie quotidienne, à la maison, dans nos ateliers de cuisine.
+                        Vous pouvez ajouter les ingrédients disponibles dans votre frigo, ajouter le prix, créer des recettes
+                        et les publier dans notre communauté chaque mois.</p>
+                        <p>Pour commencer, rendez-vous sur la page d'inscription pour utiliser l'application.</p>
+                        <br>
+                        <a href="{{ path('security.registration') }}" class="btn btn-primary">
+                        Inscription
+                        </a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <img src="https://img.icons8.com/doodle/48/null/group.png"/>
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Découvrez notre mission</h3>
+                        <p>Découvrez notre mission, notre équipe de bénévoles, nos ateliers et bien d'autres informations
+                        qui aident chaque jour de nombreuses personnes. Notre mission est essentiellement de faciliter l'organisation
+                        de notre stock ménager et de donner des idées originales de recettes faciles à réaliser
+                        pour notre famille, en consommant en vrac et en réduisant la consommation d'emballages plastiques.
+                        </p>
+                        <a href="{{ path('app_home.aboutus') }}" class="btn btn-primary">
+                        À Propos
+                        </a>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                    <div class="icon-square d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                        <img src="https://img.icons8.com/fluency/48/null/edit-message.png"/>
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Plus d'informations</h3>
+                        <p>Vous avez des questions, vous voulez en savoir plus pour participer à nos ateliers de cuisine mensuels ? </p>
+                        <p>Vous voulez faire partie de notre équipe de bénévoles ?</p>
+                        <p>Envoyez-nous un message, vous pouvez également nous appeler du lundi au vendredi de 9h à 18h. Rejoignez nous, à bientôt !</p>
+                        <br>
+                        <br>
+                        <a href="{{ path('app_contact') }}" class="btn btn-primary">
+                        Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin de section1 VRAC BLEU -->
+
+    <!-- debut de section2 Cuisiner et consommer -->
+    <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+                <img src="assets/images/imagemarcheenvrac.jpg" class="d-block mx-lg-auto img-fluid" alt="image marche en vrac bio" width="700" height="500" loading="lazy">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="display-5 lh-1 mb-3">Cuisiner et consommer autrement</h2>
+                <p class="lead">Rapprochez-vous des producteurs et des magasins locaux de votre communauté, pour faire
+                    vos achats avec vos bocaux en verre, des sacs en tissu réutilisables.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- fin de section2 Cuisiner et consommer -->
+
+    <!-- debut de section3 photos Info en Vrac Bleu -->
+    <div class="container mt-4">
+        <h2 class="pb-2 border-bottom text-center">Événements et participations en Vrac Bleu</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg" style="background-color: #eecb6a;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Forum de l'écologie et de l'environnement</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="assets/images/logo/envracbleulogo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <i class="las la-globe-europe me-2 width= 1em height= 1em"></i>
+                                <small>Paris</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="las la-calendar-check me-2 width= 1em height= 1em"></i>
+                                <small>5 Septembre 2023</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-warning rounded-4 shadow-lg">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ateliers de cuisine pour tous</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="assets/images/logo/envracbleulogo.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <i class="las la-globe-europe me-2 width= 1em height= 1em"></i>
+                                <small>Marseille</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="las la-calendar-check me-2 width= 1em height= 1em"></i>
+                                <small>20 octobre 2023</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Marché Bellevue avec les producteurs</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="assets/images/logo/envracbleulogo.png" alt="logo de la association" width="32" height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <i class="las la-globe-europe me-2 width= 1em height= 1em"></i>
+                                <small>Brest</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="las la-calendar-check me-2 width= 1em height= 1em"></i>
+                                <small>25 novembre 2023</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin de section3 photos Vrac Bleu -->
+
+{% endblock %}

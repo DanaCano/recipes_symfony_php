@@ -5,27 +5,44 @@
 
 {% block body %}
 
-    <div class="container">
-        <h1 class="mt-4">{{ recipe.name }}</h1>
-        <p class="badge bg-primary">Date de création : {{ recipe.createdAt|date('d/m/Y') }}</p>
-    </div>
+    <div class="container mt-4 text-center">
 
-    <div class="container mt-4">
-        <p>Ingredients </p>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success mt-4">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+
+        <h1 class="mt-4">{{ recipe.name }}</h1>
+        <br>
+        <div class="recipe__image">
+            <img class="img-fluid" style="max-width: 350px;" src="{{ vich_uploader_asset(recipe, 'imageFile') }}">
+        </div>
+
+        <p>La note moyenne attribuée à cette recette est de {{ recipe.average|number_format(2, '.', ',') }} sur 5</p>
+        <br>
+        <div>
+        <p class="badge bg-primary">Date de création : {{ recipe.createdAt|date('d/m/Y') }}</p>
+        </div>
+
+
+    <div class="mt-4 pb-2 lead fw-bold">
+        <p class="mt-4">Ingredients </p>
         {% for ingredient in recipe.ingredients %}
         <span class="badge bg-primary">{{ ingredient.name }}</span>
         {% endfor %}
     </div>
 
-    <div class="container mt-4">
+    <div class="mt-4">
     {% if recipe.time %}
-        <p>Temps : {{ recipe.time }} minutes</p>
+        <p>Temps : {{ recipe.time|min_to_hour }} </p>
     {% else %}
      Temps non renseigné
     {% endif %}
     </div>
 
-    <div class="container mt-4">
+    <div class="mt-4">
     {% if recipe.nbPeople %}
         <p>Quantité : {{ recipe.nbPeople }} personnes</p>
     {% else %}
@@ -33,7 +50,7 @@
     {% endif %}
     </div>
 
-    <div class="container mt-4">
+    <div class="mt-4">
     {% if recipe.difficulty %}
         <p>Difficulté : {{ recipe.difficulty }} sur 5</p>
     {% else %}
@@ -42,15 +59,15 @@
     </div>
 
 
-    <div class="container mt-4">
+    <div class="mt-4">
     {% if recipe.price %}
-        <p>Prix : {{ recipe.price }}</p>
+        <p>Prix : {{ recipe.price }} €</p>
     {% else %}
          Prix non renseigné
     {% endif %}
     </div>
 
-    <div class="container mt-4">
+    <div class="mt-4">
     {% if recipe.description %}
         <p>Description : {{ recipe.description|raw }}</p>
     {% else %}
@@ -58,5 +75,10 @@
     {% endif %}
     </div>
 
+    <div class="mark bg-primary-subtle">
+     {{ form(form) }}
+    </div>
+    <br>
+</div>
 
 {% endblock %}

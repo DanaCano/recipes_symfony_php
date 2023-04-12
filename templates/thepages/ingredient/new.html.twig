@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Création de mon ingrédient {% endblock %}
+
+{% block body %}
+
+    <div class="container mt-4 mb-4 col-6 mx-auto">
+
+        <h1 class="mt4">Création de mon ingrédient</h1>
+
+        {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            <div class="form-error">
+                {{ form_errors(form.name) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price) }}
+            <div class="form-error">
+                {{ form_errors(form.price) }}
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            {{ form_row(form.submit) }}
+        </div>
+
+    </div>
+    {{ form_end(form) }}
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+{% endblock %}
